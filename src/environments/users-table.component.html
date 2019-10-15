@@ -1,0 +1,71 @@
+<div class="container">
+        <div>
+                <div class="container">
+                    <div class="text-center">
+                        <h1>Angular 8 - Pagination Example </h1>
+            
+                       
+            
+                        <!-- pager -->
+                        <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+                            <li  class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
+                                <a  class="page-link"  (click)="setPage(1)">First</a>
+                            </li>
+                            <li  class="page-item" [ngClass]="{disabled:pager.currentPage === 1}">
+                                <a  class="page-link"  (click)="setPage(pager.currentPage - 1)">Previous</a>
+                            </li>
+                            <li class="page-item"  *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                                <a  class="page-link" (click)="setPage(page)">{{page}}</a>
+                            </li>
+                            <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                                <a  class="page-link" (click)="setPage(pager.currentPage + 1)">Next</a>
+                            </li>
+                            <li class="page-item" [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                                <a  class="page-link"  (click)="setPage(pager.totalPages)">Last</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+        <div class="row">
+                       <h3>{{title}}</h3>
+        <table class="table table-hover table-striped table-bordered ">
+        <thead>
+        <tr>
+                <th>USER ID</th>
+                <th>NAME</th>
+                <th>EMAIL</th>
+                <th>CITY</th>
+                <th>COMPANY</th>
+                <th>VIEW POSTS</th>
+                <th>VIEW TODOS</th>
+                <th>VIEW ALBUMS</th>
+               
+
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr  *ngFor="let u of pagedItems">
+                <td>{{u.id}}</td>
+                <td>{{u.name}}</td>
+                <td>{{u.email}}</td>
+                <td>{{u.address.city}}</td>
+                <td>{{u.company.name}}</td>
+                
+                <td><a   [routerLink]="['/casestudy/posts']"    [queryParams]="{'userId':u.id}"> <input type="button" value="VIEW POSTS"  class="btn btn-success"> </a></td>
+                <td><a   [routerLink]="['/casestudy/todos']"    [queryParams]="{'userId':u.id}"> <input type="button" value="VIEW TODOS"  class="btn btn-info"> </a></td>
+                <td><a   [routerLink]="['/casestudy/albums']"    [queryParams]="{'userId':u.id}"> <input type="button" value="VIEW ALBUMS"  class="btn btn-primary"> </a></td>
+                
+        </tr>
+        </tbody>
+        
+        </table>
+        
+        
+        </div> 
+        
+        
+        </div>

@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" [routerLink]="['/home']">Angular</a>
+
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link"   [routerLink]="['/basics']"   >Basics</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/pipes']">Pipes</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/technologies']">Technologies</a>
+    </li>
+    
+
+    <!-- Dropdown -->
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" [routerLink]="['/casestudy']" id="navbardrop" data-toggle="dropdown">
+        Case Study
+      </a>
+      <div class="dropdown-menu">
+      
+          <li class="dropdown-submenu">
+
+            <a class="test" [routerLink]="['/casestudy/users']" >Users</a>
+              
+            <ul class="dropdown-menu">
+              <li><a tabindex="-1" class="dropdown-item" [routerLink]="['/casestudy/users/list']">Users List</a></li>
+              <li><a tabindex="-1" class="dropdown-item" [routerLink]="['/casestudy/users/table']">Users Table</a></li>
+            </ul>  
+           </li>
+
+          <a  class="dropdown-item" [routerLink]="['/casestudy/posts']">Posts</a>
+          <a  class="dropdown-item" [routerLink]="['/casestudy/comments']">Comments</a>
+          <a  class="dropdown-item" [routerLink]="['/casestudy/todos']">Todos</a>
+          <a  class="dropdown-item" [routerLink]="['/casestudy/albums']">Albums</a>
+          <a  class="dropdown-item" [routerLink]="['/casestudy/photos']">Photos</a>
+           
+          
+     
+      </div>
+    </li>
+  </ul>
+</nav>
+<br>
+  
+<div class="container">
+  <router-outlet></router-outlet>
+  
+</div>
+
+
+
+

@@ -1,0 +1,50 @@
+<div class="container">
+
+    <div class="row">
+
+
+   Select Number of rows :<input type="number" [(ngModel)]="rows" min="1" [max]="employees.length"/>   {{rows}}
+<hr>
+   Search Text  :<input type="text" [(ngModel)]="searchText"/> 
+<hr> 
+    <table class="table table-hover table-striped table-bordered ">
+    <thead>
+    <tr>
+            <th  (click)="sort('id')">ID</th>
+            <th  (click)="sort('name')">NAME</th>
+            <th  (click)="sort('salary')">SALARY AS NUMBER</th>
+            <th  (click)="sort('salary')">SALARY AS CURRENCY</th>
+            <th  (click)="sort('variable')">VARIABLE</th>
+            <th  (click)="sort('gender')">Gender</th>
+            <th  (click)="sort('city')">CITY</th>
+            <th  (click)="sort('pan')">PAN</th>
+            <th  (click)="sort('mobile')">MOBILE</th>
+            <th  (click)="sort('doj')">DOJ</th>
+            <th  (click)="sort('isMarried')">ISMARRIED</th>
+         
+    </tr>
+    </thead>
+    <tbody>
+    <tr  *ngFor="let e of employees|slice:0:rows|orderBy:sortColumn:descending|filter:searchText">
+            <td>{{e.id}}</td>
+            <td>{{e.name|titlecase}}</td>
+            <td>{{e.salary|number}}</td>
+            <td>{{e.salary|currency}}</td>
+            <td>{{e.variable|percent}}</td>
+            <td>{{e.gender|gender}}</td>
+            <td>{{e.city}}</td>
+            <td>{{e.pan|uppercase|slice:0:2}}XXXXXX{{e.pan|uppercase|slice:8:10}}</td>
+            <td>XXXXXXXX{{e.mobile|slice:8:10}}</td>
+            <td>{{e.doj|date}}</td>
+            <td>{{e.isMarried}}</td>
+            
+    </tr>
+    </tbody>
+    
+    </table>
+    
+    
+    </div> 
+    
+    
+    </div>
