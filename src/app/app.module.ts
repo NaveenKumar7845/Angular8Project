@@ -21,6 +21,7 @@ import { CaseStudyComponent } from './case-study/case-study.component';
 import { UsersListComponent } from './users-list/users-list.component';
 import { UsersTableComponent } from './users-table/users-table.component';
 import { UsersService } from './services/users.service';
+import { TodoService } from './services/todo.service';
 
 @NgModule({
   declarations: [//components directives pipes
@@ -34,7 +35,7 @@ import { UsersService } from './services/users.service';
     Ng2SearchPipeModule,
     HttpClientModule
   ],
-  providers: [],//services  //prior to angular 5
+  providers: [TodoService],//services  //prior to angular 5
 // bootstrap: [AppComponent,Angular8BasicsComponent, Angular8PipesComponent, TechnologiesComponent] 
   bootstrap: [AppComponent] 
 

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { PostsService } from '../services/posts.service';
 import { ActivatedRoute } from '@angular/router';
 import { PagerService } from '../services/pager.service';
-import { StudentDetailsService } from './services/todos.service';
+import {TodoService} from '../services/TodoService';
 
 @Component({
   selector: 'app-todos',
