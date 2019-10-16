@@ -1,1 +1,29 @@
-<p>albums works!</p>
+<div class="container">
+  <div class="mat-elevation-z8">
+  <table mat-table [dataSource]="dataSource">
+
+    
+    <ng-container matColumnDef="position">
+      <th mat-header-cell *matHeaderCellDef> USERID </th>
+      <td mat-cell *matCellDef="let element"> {{albums.userId}} </td>
+    </ng-container>
+
+    
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> ID </th>
+      <td mat-cell *matCellDef="let element"> {{albums.id}} </td>
+    </ng-container>
+
+    
+    <ng-container matColumnDef="weight">
+      <th mat-header-cell *matHeaderCellDef> TITLE </th>
+      <td mat-cell *matCellDef="let element"> {{albums.title}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+</div>
+</div>

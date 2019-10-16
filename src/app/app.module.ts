@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -20,7 +21,9 @@ import { CommentsComponent } from './comments/comments.component';
 import { CaseStudyComponent } from './case-study/case-study.component';
 import { UsersListComponent } from './users-list/users-list.component';
 import { UsersTableComponent } from './users-table/users-table.component';
+import {MatTableModule} from '@angular/material/table';
 import { UsersService } from './services/users.service';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 @NgModule({
@@ -33,7 +36,7 @@ import { UsersService } from './services/users.service';
     AppRoutingModule,
     FormsModule,
     Ng2SearchPipeModule,
-    HttpClientModule
+    HttpClientModule,BrowserAnimationsModule,MatTableModule,MatPaginatorModule
   ],
   providers: [],//services  //prior to angular 5
 // bootstrap: [AppComponent,Angular8BasicsComponent, Angular8PipesComponent, TechnologiesComponent] 

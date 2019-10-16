@@ -15,6 +15,7 @@ import { UsersListComponent } from './users-list/users-list.component';
 import { UsersTableComponent } from './users-table/users-table.component';
 
 
+
 const routes: Routes = [
   {path:'home',component:HomeComponent},
   {path:'basics',component:Angular8BasicsComponent},
