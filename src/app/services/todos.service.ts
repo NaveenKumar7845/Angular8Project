@@ -25,6 +25,8 @@ getTodosId(todosId:number):Observable<any>{
 
  
  getTodosByUserId(userId:number):Observable<any>{
+  console.log(this.baseURL+"?userId="+userId);
   return this.http.get(this.baseURL+"?userId="+userId);
+  
  }
 }

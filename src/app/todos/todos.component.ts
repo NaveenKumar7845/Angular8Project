@@ -29,7 +29,7 @@ constructor(private ts:TodosService,private route:ActivatedRoute,private pagerSe
     }
   
     ngOnInit() {
-
+      this.userId = this.route.snapshot.queryParams.userId;
       
       console.log("################### TodosComponent initialized ############");
       
@@ -57,7 +57,7 @@ getAllTodos(){
 }
 getAllTodosByUserId(){
 
-  this.ts.getAllTodosByUserId(this.userId)
+  this.ts.getTodosByUserId(this.userId)
          .subscribe(response=>{this.todos=response;
         this.setPage(1);
         },error=>this.message=error);
