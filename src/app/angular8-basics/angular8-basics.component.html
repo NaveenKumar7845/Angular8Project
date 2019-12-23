@@ -26,7 +26,7 @@
 <div class="jumbotron"   [ngClass]="{'A':show,'B':hide,'C':show,'D':hide}">
 Select day :<input type="number"  [(ngModel)]="day"   min="{{min}}"  [max]="max">:{{day}}
 
-
+<input type="text">
 <div   [ngSwitch]="day">
         <div  *ngSwitchCase="1"> MONDAY</div>
         <div  *ngSwitchCase="2"> TUESDAY</div>
